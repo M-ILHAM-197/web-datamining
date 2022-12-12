@@ -98,14 +98,14 @@ with tab2:
 
     data = penguin_raw.drop(columns=["bill_length_mm","bill_depth_mm","flipper_length_mm","body_mass_g"])
 
+    st.write("Setelah di encoding")
     st.dataframe(data.head(10))
 
     st.subheader("Preprocessing Data Berhasil")
 
     dataset1 = data
     dataset1 = dataset1.join(dataset)
-
-    st.dataframe(dataset)
+    
 with tab3:
     st.header("Modelling")
     
@@ -156,6 +156,7 @@ with tab3:
         st.write("##### Random Forest Classifier")
         st.error("Dengan menggunakan metode Random Forest didapatkan akurasi sebesar:")
         st.error(f"Akurasi = {randomforest_accuracy}%")
+        st.markdown("---")
 
     if knn_cekbox:
         st.write("##### KNN")
